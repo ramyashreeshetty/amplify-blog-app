@@ -4,6 +4,7 @@ import PostContainer from './components/Post'
 import NavBar from './components/Navbar'
 import PostList from './components/PostList'
 
+
 //import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
