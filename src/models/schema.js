@@ -35,7 +35,7 @@ export const schema = {
                     "name": "content",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "createdAt": {
@@ -90,17 +90,31 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "author": {
+                    "name": "author",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "text": {
+                    "name": "text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "email": {
+                    "name": "email",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
                 "postID": {
                     "name": "postID",
                     "isArray": false,
                     "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "content": {
-                    "name": "content",
-                    "isArray": false,
-                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -158,5 +172,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "e86d12e6fdbaf5eb91618a803e1009cd"
+    "version": "cab82c3c8edc5a2fac17de7d720df161"
 };

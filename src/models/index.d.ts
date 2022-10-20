@@ -12,7 +12,7 @@ export declare class Post {
   readonly id: string;
   readonly title: string;
   readonly comments?: (Comment | null)[] | null;
-  readonly content?: string | null;
+  readonly content: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Post, PostMetaData>);
@@ -21,8 +21,10 @@ export declare class Post {
 
 export declare class Comment {
   readonly id: string;
+  readonly author: string;
+  readonly text: string;
+  readonly email: string;
   readonly postID: string;
-  readonly content: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Comment, CommentMetaData>);
