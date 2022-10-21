@@ -3,8 +3,6 @@ import { DataStore } from '@aws-amplify/datastore'
 import { Post } from '../models'
 import { Paper, Button, TextField, Box } from '@material-ui/core'
 import { mergeClasses } from '@material-ui/styles'
-import { Editor } from "react-draft-wysiwyg";
-import {EditorState} from 'draft-js';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import useStyles from './CreatePostStyles';
 import JoditEditor, {Jodit} from 'jodit-react';
