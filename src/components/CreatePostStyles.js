@@ -33,7 +33,10 @@ export default makeStyles((theme) => ({
     fontFamily: font,
     marginTop: "1%",
   },
-  textEditor: {
+  textEditor:{
+    width: '100%', 
+    marginTop: "3%",
+    marginBottom: "6%",
   },
   submitBtn: {
     backgroundColor: "#ed7311",

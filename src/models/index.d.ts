@@ -1,7 +1,7 @@
 import { ModelInit, MutableModel } from "@aws-amplify/datastore";
 
 type PostMetaData = {
-  readOnlyFields: 'createdAt' | 'updatedAt';
+  readOnlyFields: 'updatedAt';
 }
 
 type CommentMetaData = {

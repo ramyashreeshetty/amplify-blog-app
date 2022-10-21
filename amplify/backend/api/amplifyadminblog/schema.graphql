@@ -3,6 +3,7 @@ type Post @model @auth(rules: [{allow: public}]) {
   title: String!
   comments: [Comment] @hasMany(indexName: "byPost", fields: ["id"])
   content: String!
+  createdAt: AWSDateTime
 }
 
 type Comment @model @auth(rules: [{allow: public}]) {

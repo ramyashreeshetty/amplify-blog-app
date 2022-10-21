@@ -6,6 +6,7 @@ import { CardContent, Paper, Button, CardActions, Card, Typography, CardHeader }
 import { makeStyles } from '@material-ui/core/styles';
 import Welcome from '../components/Welcome';
 import { ArrowForwardIos } from '@material-ui/icons'
+import { format } from 'date-fns';
 
 const font = "'Poppins', sans-serif";
 
@@ -19,7 +20,10 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "#ed7311",
     fontFamily: font,
+    margin: 0,
+    padding: 0,
     marginLeft: "1%",
+    marginTop: "1%",
   },
   postContent: {
     marginLeft: "1%",
@@ -47,17 +51,30 @@ const useStyles = makeStyles((theme) => ({
   readBtn:{
     color: "#ed7311",
     cursor: "pointer",
-    fontSize: "12px",
+    fontSize: "12qlpx",
     margin: "2% 1% 1% 0%",
     borderColor:"#ed7311",
     '&:hover': {
       background: "#ed7311",
       color: "white",
     },
+    },
+    postDate:{
+      fontFamily:font,
+      fontSize:"9px",
+      margin: 0,
+      padding: 0,
+      marginLeft: "1%",
+      color:"#4E4E4E",
     }
   
 }));
 
+function extractContent(s) {
+  var span = document.createElement('span');
+  span.innerHTML = s;
+  return span.textContent || span.innerText;
+};
 
 export default function PostList () {
 
@@ -72,6 +89,7 @@ export default function PostList () {
     getData()
   }, [])
 
+
   return (
     <>
     <Welcome />
@@ -82,7 +100,8 @@ export default function PostList () {
             <Paper className={classes.paper} elevation={1}>
             <section className='tile is-child notification box is-info'>
               <h2 className={classes.postTitle}>{post.title}</h2>
-              <p className={classes.postContent}>{post.content.substring(0, 300)}...</p>
+              <p className={classes.postDate}>{format(new Date(), '| MMMM dd, yyyy, h:mm aaa')}</p>
+              <p className={classes.postContent}>{extractContent(post.content).substring(0,500)}...</p>
               <Link to={`/post/${post.id}`} className={classes.postTitle}>
                 <Button variant="outlined" endIcon={ <ArrowForwardIos />} size="small" className={classes.readBtn}>Read More</Button>
               </Link>
@@ -106,7 +125,6 @@ export default function PostList () {
             </CardActions>
         </Card>
         </div>
-
       </div>
     </>
   );
